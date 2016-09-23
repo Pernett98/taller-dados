@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="input-group">
+        <input type="number" ng-model="entry" min="1" class="form-control" placeholder="Numero de lanzamientos" required>
+        <span class="input-group-btn">
+          <button class="btn btn-md btn-default" type="button" ng-click="calculate()">Calcular!</button>
+        </span>
+      </div>
+  </div>
+</div>
+<div class="jumbotron">
+  <p class="lead">
+
+  <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-series="series">
+  </canvas>
+</div>
+
+<div class="row marketing">
+
+</div>
