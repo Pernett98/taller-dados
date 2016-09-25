@@ -20,6 +20,7 @@
     $scope.calculate = calculate;
     $scope.labels = ['1', '2', '3', '4', '5', '6'];
     $scope.series = ['Lanzamiento A', 'Lanzamiento B'];
+    $scope.lanzamientos = 0;
 
     $scope.data = [
       [],
@@ -32,21 +33,15 @@
     }
 
     function calculate() {
+      $scope.lanzamientos = $scope.entry;
       var serie = [0, 0, 0, 0, 0, 0];
       for (var i = 0; i < $scope.entry; i++) {
         var resultadoDado = getRandom(1,7);
-
         serie[resultadoDado-1] = serie[resultadoDado-1] + 1;
       }
-      // console.log($scope.serieAnterior);
-      if ($scope.serieAnterior.length) {
-        $scope.data[1] = $scope.serieAnterior;
-        $scope.data[0] = serie;
-        $scope.serieAnterior = serie;
-      }else {
-        $scope.data[0] = serie;
-        $scope.serieAnterior = serie;
-      }
+      $scope.data[1] = $scope.serieAnterior;
+      $scope.data[0] = serie;
+      $scope.serieAnterior = serie;
     }
   }
 })();
