@@ -14,15 +14,14 @@
   </div>
   <div class="row" style="margin-left: 100px; margin-right: 100px;">
     <div class="col m6">
-      <div class="card">
-
+      <div class="card" ng-if="lanzamientos">
         <canvas id="bar" class="chart chart-bar" chart-colors="['#26a69a', '#bdbdbd']" chart-data="data" chart-labels="labels" chart-series="series">
         </canvas>
       </div>
     </div>
     <div class="col m6">
       <div class="card">
-        <div  ng-if="lanzamientos" class="panel panel-default">
+        <div ng-if="lanzamientos" class="panel panel-default">
           <div class="panel-heading"></div>
           <table class="centered">
             <thead>
